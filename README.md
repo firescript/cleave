@@ -8,13 +8,16 @@ Cleave component is based on [cleave.js](https://github.com/nosir/cleave.js) for
 ```
 $ npm install vue-cleave --save
 ```
-
+Import it..
+```
+import Cleave from 'vue-cleave';
+```
 
 ## Examples
 
 ```vue
 <template>
-  <cleave placeholder="Enter your credit card number" :options="{ creditCard: true }"></cleave>
+  <cleave placeholder="Enter your credit card number" ref="creditcard" :options="{ creditCard: true }"></cleave>
 </template>
 
 <script>
@@ -27,7 +30,11 @@ export default {
 }
 </script>
 ```
-
+### Access format free variable for a POST request
+You can use this anywhere in your the
+```
+this.$refs.creditcard.cleave.getRawValue()
+```
 
 ## Badges
 
